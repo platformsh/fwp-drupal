@@ -16,8 +16,6 @@ type: 'php:7.2'
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
     database: 'mysqldb:mysql'
-#    solr: 'solrsearch:solr'
-#    redis: 'rediscache:redis'
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -27,28 +25,18 @@ disk: 2048
 # 'shared:files/PATH', where PATH is a relative path under the mount's source directory.
 mounts:
     '/web/sites/default/files': 'shared:files/files'
-    '/tmp': 'shared:files/tmp'
-    '/private': 'shared:files/private'
-    '/.drush': 'shared:files/.drush'
-    '/drush-backups': 'shared:files/drush-backups'
+    '/web/tmp': 'shared:files/tmp'
     '/web/modules': 'shared:files/modules'
     '/web/themes': 'shared:files/themes'
 
 # Configuration of the build of this application.
 build:
-    flavor: composer
+    flavor: none
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     # The deploy hook runs after your application has been deployed and started.
-    deploy: |
-      set -e
-      ./drush/platformsh_generate_drush_yml.php
-      cd web
-      drush -y cache-rebuild
-      drush -y updatedb
-      drush -y config-import
-      drush -y entup
+    deploy:
 
 # The configuration of app when it is exposed to the web.
 web:
@@ -107,9 +95,3 @@ web:
                 # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
                 '^/sites/default/files/(css|js)':
                     expires: 2w
-
-# The configuration of scheduled execution.
-crons:
-    drupal:
-        spec: '*/20 * * * *'
-        cmd: 'cd web ; drush core-cron'
