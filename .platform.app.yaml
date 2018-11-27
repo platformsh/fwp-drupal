@@ -29,8 +29,6 @@ mounts:
     '/private': 'shared:files/private'
     '/web/modules': 'shared:files/modules'
     '/web/themes': 'shared:files/themes'
-    '/.drush': 'shared:files/.drush'    
-    '/drush-backups': 'shared:files/drush-backups'
 
 # Configuration of the build of this application.
 build:
