@@ -25,9 +25,12 @@ disk: 2048
 # 'shared:files/PATH', where PATH is a relative path under the mount's source directory.
 mounts:
     '/web/sites/default/files': 'shared:files/files'
-    '/web/tmp': 'shared:files/tmp'
+    '/tmp': 'shared:files/tmp'
+    '/private': 'shared:files/private'
     '/web/modules': 'shared:files/modules'
     '/web/themes': 'shared:files/themes'
+    '/.drush': 'shared:files/.drush'    
+    '/drush-backups': 'shared:files/drush-backups'
 
 # Configuration of the build of this application.
 build:
