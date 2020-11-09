@@ -24,11 +24,21 @@ disk: 2048
 # directory paths, relative to the application root. The values are strings such as
 # 'shared:files/PATH', where PATH is a relative path under the mount's source directory.
 mounts:
-    '/web/sites/default/files': 'shared:files/files'
-    '/tmp': 'shared:files/tmp'
-    '/private': 'shared:files/private'
-    '/web/modules': 'shared:files/modules'
-    '/web/themes': 'shared:files/themes'
+    '/web/sites/default/files':
+        source: local
+        source_path: 'files/files'
+    '/tmp':
+        source: local
+        source_path: 'tmp'
+    '/private':
+        source: local
+        source_path: 'files/private'
+    '/web/modules':
+        source: local
+        source_path: 'files/modules'
+    '/web/themes':
+        source: local
+        source_path: 'files/themes'
 
 # Configuration of the build of this application.
 build:
