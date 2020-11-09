@@ -26,19 +26,19 @@ disk: 2048
 mounts:
     '/web/sites/default/files':
         source: local
-        source_path: 'files/files'
+        source_path: 'files'
     '/tmp':
         source: local
         source_path: 'tmp'
     '/private':
         source: local
-        source_path: 'files/private'
+        source_path: 'private'
     '/web/modules':
         source: local
-        source_path: 'files/modules'
+        source_path: 'modules'
     '/web/themes':
         source: local
-        source_path: 'files/themes'
+        source_path: 'themes'
 
 # Configuration of the build of this application.
 build:
