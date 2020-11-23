@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6afa31902a499e389eb461fe41f09a23",
+    "content-hash": "7d6e2b91046b8698b12e987f00737831",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2496,16 +2496,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.9.8",
+            "version": "8.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "e16f650e7bd7f0cfb4ff4dd8ed753625313cdfdb"
+                "reference": "724ada1a6c497a663797c40e4ee3d0c7c618371d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/e16f650e7bd7f0cfb4ff4dd8ed753625313cdfdb",
-                "reference": "e16f650e7bd7f0cfb4ff4dd8ed753625313cdfdb",
+                "url": "https://api.github.com/repos/drupal/core/zipball/724ada1a6c497a663797c40e4ee3d0c7c618371d",
+                "reference": "724ada1a6c497a663797c40e4ee3d0c7c618371d",
                 "shasum": ""
             },
             "require": {
@@ -2723,7 +2723,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2020-11-05T16:34:55+00:00"
+            "time": "2020-11-17T22:05:46+00:00"
         },
         {
             "name": "drush/drush",
@@ -3361,36 +3361,36 @@
         },
         {
             "name": "laminas/laminas-escaper",
-            "version": "2.6.1",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-escaper.git",
-                "reference": "25f2a053eadfa92ddacb609dcbbc39362610da70"
+                "reference": "5e04bc5ae5990b17159d79d331055e2c645e5cc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/25f2a053eadfa92ddacb609dcbbc39362610da70",
-                "reference": "25f2a053eadfa92ddacb609dcbbc39362610da70",
+                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/5e04bc5ae5990b17159d79d331055e2c645e5cc5",
+                "reference": "5e04bc5ae5990b17159d79d331055e2c645e5cc5",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^5.6 || ^7.0"
+                "php": "^7.3 || ~8.0.0"
             },
             "replace": {
-                "zendframework/zend-escaper": "self.version"
+                "zendframework/zend-escaper": "^2.6.1"
             },
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
+                "phpunit/phpunit": "^9.3",
+                "psalm/plugin-phpunit": "^0.12.2",
+                "vimeo/psalm": "^3.16"
+            },
+            "suggest": {
+                "ext-iconv": "*",
+                "ext-mbstring": "*"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6.x-dev",
-                    "dev-develop": "2.7.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Escaper\\": "src/"
@@ -3406,20 +3406,26 @@
                 "escaper",
                 "laminas"
             ],
-            "time": "2019-12-31T16:43:30+00:00"
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2020-11-17T21:26:43+00:00"
         },
         {
             "name": "laminas/laminas-feed",
-            "version": "2.12.3",
+            "version": "2.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-feed.git",
-                "reference": "3c91415633cb1be6f9d78683d69b7dcbfe6b4012"
+                "reference": "fb89aac1984222227f37792dd193d34829a0762f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/3c91415633cb1be6f9d78683d69b7dcbfe6b4012",
-                "reference": "3c91415633cb1be6f9d78683d69b7dcbfe6b4012",
+                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/fb89aac1984222227f37792dd193d34829a0762f",
+                "reference": "fb89aac1984222227f37792dd193d34829a0762f",
                 "shasum": ""
             },
             "require": {
@@ -3428,7 +3434,10 @@
                 "laminas/laminas-escaper": "^2.5.2",
                 "laminas/laminas-stdlib": "^3.2.1",
                 "laminas/laminas-zendframework-bridge": "^1.0",
-                "php": "^5.6 || ^7.0"
+                "php": "^7.3 || ~8.0.0"
+            },
+            "conflict": {
+                "laminas/laminas-servicemanager": "<3.3"
             },
             "replace": {
                 "zendframework/zend-feed": "^2.12.0"
@@ -3438,10 +3447,12 @@
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "laminas/laminas-db": "^2.8.2",
                 "laminas/laminas-http": "^2.7",
-                "laminas/laminas-servicemanager": "^2.7.8 || ^3.3",
+                "laminas/laminas-servicemanager": "^3.3",
                 "laminas/laminas-validator": "^2.10.1",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20",
-                "psr/http-message": "^1.0.1"
+                "phpunit/phpunit": "^9.3",
+                "psalm/plugin-phpunit": "^0.13.0",
+                "psr/http-message": "^1.0.1",
+                "vimeo/psalm": "^4.1"
             },
             "suggest": {
                 "laminas/laminas-cache": "Laminas\\Cache component, for optionally caching feeds between requests",
@@ -3452,12 +3463,6 @@
                 "psr/http-message": "PSR-7 ^1.0.1, if you wish to use Laminas\\Feed\\Reader\\Http\\Psr7ResponseDecorator"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.12.x-dev",
-                    "dev-develop": "2.13.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Feed\\": "src/"
@@ -3479,20 +3484,20 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-08-18T13:45:04+00:00"
+            "time": "2020-11-18T21:02:52+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-stdlib.git",
-                "reference": "b9d84eaa39fde733356ea948cdef36c631f202b6"
+                "reference": "d81c7ffe602ed0e6ecb18691019111c0f4bf1efe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/b9d84eaa39fde733356ea948cdef36c631f202b6",
-                "reference": "b9d84eaa39fde733356ea948cdef36c631f202b6",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/d81c7ffe602ed0e6ecb18691019111c0f4bf1efe",
+                "reference": "d81c7ffe602ed0e6ecb18691019111c0f4bf1efe",
                 "shasum": ""
             },
             "require": {
@@ -3505,15 +3510,9 @@
             "require-dev": {
                 "laminas/laminas-coding-standard": "~1.0.0",
                 "phpbench/phpbench": "^0.17.1",
-                "phpunit/phpunit": "^9.3.7"
+                "phpunit/phpunit": "~9.3.7"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev",
-                    "dev-develop": "3.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Laminas\\Stdlib\\": "src/"
@@ -3535,7 +3534,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-08-25T09:08:16+00:00"
+            "time": "2020-11-19T20:18:59+00:00"
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
@@ -3775,16 +3774,16 @@
         },
         {
             "name": "pear/archive_tar",
-            "version": "1.4.10",
+            "version": "1.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Archive_Tar.git",
-                "reference": "bbb4f10f71a1da2715ec6d9a683f4f23c507a49b"
+                "reference": "17d355cb7d3c4ff08e5729f29cd7660145208d9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/bbb4f10f71a1da2715ec6d9a683f4f23c507a49b",
-                "reference": "bbb4f10f71a1da2715ec6d9a683f4f23c507a49b",
+                "url": "https://api.github.com/repos/pear/Archive_Tar/zipball/17d355cb7d3c4ff08e5729f29cd7660145208d9d",
+                "reference": "17d355cb7d3c4ff08e5729f29cd7660145208d9d",
                 "shasum": ""
             },
             "require": {
@@ -3837,7 +3836,7 @@
                 "archive",
                 "tar"
             ],
-            "time": "2020-09-15T14:13:23+00:00"
+            "time": "2020-11-19T22:10:24+00:00"
         },
         {
             "name": "pear/console_getopt",
@@ -9626,16 +9625,16 @@
         },
         {
             "name": "webflo/drupal-core-require-dev",
-            "version": "8.9.8",
+            "version": "8.9.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webflo/drupal-core-require-dev.git",
-                "reference": "fc4256308d8f657c9b30aa43c5f27304fe4f5aa8"
+                "reference": "bcdbea5db6814faaead71b62e2d6da6741b72003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/fc4256308d8f657c9b30aa43c5f27304fe4f5aa8",
-                "reference": "fc4256308d8f657c9b30aa43c5f27304fe4f5aa8",
+                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/bcdbea5db6814faaead71b62e2d6da6741b72003",
+                "reference": "bcdbea5db6814faaead71b62e2d6da6741b72003",
                 "shasum": ""
             },
             "require": {
@@ -9644,7 +9643,7 @@
                 "behat/mink-selenium2-driver": "^1.4",
                 "composer/composer": "^1.9.1",
                 "drupal/coder": "^8.3.7",
-                "drupal/core": "8.9.8",
+                "drupal/core": "8.9.9",
                 "jcalderonzumba/gastonjs": "^1.0.2",
                 "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
                 "justinrainbow/json-schema": "^5.2",
@@ -9667,7 +9666,7 @@
             ],
             "description": "require-dev dependencies from drupal/core",
             "abandoned": "drupal/core-dev",
-            "time": "2020-11-05T17:02:34+00:00"
+            "time": "2020-11-18T18:32:24+00:00"
         }
     ],
     "aliases": [],
