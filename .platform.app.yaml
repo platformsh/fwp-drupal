@@ -37,6 +37,12 @@ mounts:
     '/web/themes':
         source: local
         source_path: 'themes'
+    '/.drush':
+        source: local
+        source_path: 'drush'
+    '/config/sync':
+        source: local
+        source_path: 'config-sync'
 
 # Configuration of the build of this application.
 build:
@@ -45,9 +51,12 @@ build:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     # The deploy hook runs after your application has been deployed and started.
-    deploy:
+    deploy: |
         set -e
-        cd && ./vendor/bin/drush -y updb; ./vendor/bin/drush -y cr
+        php ./drush/platformsh_generate_drush_yml.php
+        cd web
+        drush -y updatedb
+        drush -y cache-rebuild
 
 # The configuration of app when it is exposed to the web.
 web:
@@ -106,3 +115,8 @@ web:
                 # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
                 '^/sites/default/files/(css|js)':
                     expires: 2w
+crons:
+    # Run Drupal's cron tasks every 19 minutes.
+    drupal:
+        spec: '*/15 * * * *'
+        cmd: 'cd web ; drush core-cron'
