@@ -50,6 +50,10 @@ mounts:
     '/.console':
         source: local
         source_path: 'console'
+    # Mount for fwp-drupal
+    '/config/sync':
+        source: local
+        source_path: 'config-sync'
     '/web/modules':
         source: local
         source_path: 'modules'
