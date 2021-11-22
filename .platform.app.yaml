@@ -66,6 +66,10 @@ build:
     # Automatically run `composer install` on every build.
     flavor: composer
 
+dependencies:
+    php:
+        composer/composer: '^2'
+
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     # The build hook runs after Composer to finish preparing up your code.
@@ -110,7 +114,7 @@ web:
             # Rules for specific URI patterns.
             rules:
                 # Allow access to common static files.
-                '(?i)\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
+                '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
                     allow: true
                 '^/robots\.txt$':
                     allow: true
