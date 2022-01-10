@@ -34,6 +34,10 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/modules/README.txt": false,
+                "[web-root]/themes/README.txt": false
             }
         },
         "installer-paths": {
