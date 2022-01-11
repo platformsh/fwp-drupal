@@ -25,8 +25,12 @@ console/
 
 # Ignore mounts
 web/sites/default/files
+web/modules
+web/themes
+config/sync
 tmp
 private
 .drush
 drush-backups
 .console
+/.editorconfig
