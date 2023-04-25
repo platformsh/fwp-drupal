@@ -16,9 +16,9 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/core-composer-scaffold": "9.5.5",
-        "drupal/core-project-message": "9.5.5",
-        "drupal/core-recommended": "9.5.5",
+        "drupal/core-composer-scaffold": "9.5.8",
+        "drupal/core-project-message": "9.5.8",
+        "drupal/core-recommended": "9.5.8",
         "drush/drush": "^11.0",
         "platformsh/config-reader": "^2.4"
     },
